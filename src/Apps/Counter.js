@@ -1,29 +1,34 @@
-import React from 'react';
-import {Container, Row, Col, Badge} from 'react-bootstrap';
-import Button from '../Util/Button.js'
-import { useState } from 'react'
+import React, { useState } from 'react';
+import { Container, Row, Col, Badge } from 'react-bootstrap';
+import Button from 'shared/Button.js'
 
-const CounterButton = ({increment, onClickFunction}) => {
+const CounterButton = ({ increment, onClickFunction }) => {
   const handleClick = () => {
     onClickFunction(increment)
   }
-  return <Button variant="outline-primary" onClick={handleClick} text={'+' + increment}/>
+  return <Button variant="outline-primary" onClick={handleClick} text={'+' + increment} />
 }
 
-const MultiplyButton = ({multiply, onClickFunction}) => {
+const MultiplyButton = ({ multiply, onClickFunction }) => {
   const handleClick = () => {
     onClickFunction(multiply)
   }
-  return <Button variant="outline-primary" onClick={handleClick} text={'*' + multiply}/>
+  return <Button variant="outline-primary" onClick={handleClick} text={'*' + multiply} />
 }
 
+const ResetButton = ({ text, onClickFunction }) => {
+  const handleClick = () => {
+    onClickFunction()
+  }
+  return <Button size="lg" variant="success" onClick={handleClick} text={text} />
+}
 const Counter = () => {
   const [count, setCount] = useState(0)
-  
+
   const incrementCount = increment => {
     setCount(count + increment)
-  }  
-  
+  }
+
   const multiplyCount = multiply => {
     setCount(count * multiply)
   }
@@ -32,24 +37,29 @@ const Counter = () => {
     <div className="Counter">
       <Container>
         <Row>
-              {
-                [1,10,100,1000,5000].map((value, index) => 
-                <Col>
-                  <CounterButton increment={value} onClickFunction={incrementCount} key={index}></CounterButton>
-                </Col>)
-              }
-            {
-              [2,5,7].map((value, index) => 
-              <Col>
+          <Col>
+            <h3>
+              Counter (simple Hook)
+            </h3>
+          </Col>
+        </Row>
+        <Row>
+          {
+            [1, 10, 100, 1000, 5000].map((value, index) =>
+              <Col key={index}>
+                <CounterButton increment={value} onClickFunction={incrementCount} key={index}></CounterButton>
+              </Col>)
+          }
+          {
+            [2, 5, 7].map((value, index) =>
+              <Col key={index}>
                 <MultiplyButton multiply={value} onClickFunction={multiplyCount} key={index}></MultiplyButton>
               </Col>)
-            }
+          }
         </Row>
         <Row>
           <Col>
-            <h1>
-              <Badge pill variant="success">{count}</Badge>
-            </h1>
+            <ResetButton onClickFunction={() => setCount(0)} text={count}></ResetButton>
           </Col>
         </Row>
       </Container>
