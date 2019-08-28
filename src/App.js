@@ -1,18 +1,40 @@
 import React from 'react';
 import './App.css';
-import Counter from "apps/Counter";
-import Header from "header/Header";
-import TicTacToe from "apps/tictactoe/TicTacToe";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+
+import Routes from "routes/Routes";
+
+import Header from "static/Header";
+
+import Button from 'shared/Button';
 
 const App = () => {
   return (
-    <div className="App">
-      <Header/>
-     <Counter/>
-     <div className="border-top my-2"></div>
-     <TicTacToe/>
-     <div className="border-top my-2"></div>
-    </div>
+    <Router>
+      <div className="App">
+        <Header>
+          <Link to={"/"}>
+            <Button
+              variant="outline-dark"
+              text="Home"
+            />
+          </Link>
+          <Link to={"/counter"}>
+            <Button
+              variant="outline-dark"
+              text="Counter"
+            />
+          </Link>
+          <Link to={"/tictactoe"}>
+            <Button
+              variant="outline-dark"
+              text="Tic Tac Toe"
+            />
+          </Link>
+        </Header>
+        <Routes />
+      </div>
+    </Router>
   );
 }
 
