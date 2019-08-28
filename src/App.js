@@ -19,6 +19,12 @@ const App = () => {
               text="Home"
             />
           </Link>
+          <Link to={"/redux"}>
+            <Button
+              variant="outline-dark"
+              text="Redux"
+            />
+          </Link>
           <Link to={"/counter"}>
             <Button
               variant="outline-dark"
