@@ -13,7 +13,7 @@ const App = () => {
     <Router>
       <div className="App">
         <Header>
-          <Link to={"/"}>
+          <Link to={"/home"}>
             <Button
               variant="outline-dark"
               text="Home"

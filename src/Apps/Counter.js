@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Badge } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Button from 'shared/Button.js'
 
 const CounterButton = ({ increment, onClickFunction }) => {
