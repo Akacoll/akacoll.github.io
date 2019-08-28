@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 import JumboTron from 'react-bootstrap/Jumbotron';
 
@@ -14,8 +14,8 @@ const Header = (props) => (
                 </Row>
                 <Row>
                     {
-                        props.children.map((child, index) => (
-                            <Col key={index}>
+                        props.children.map((child) => (
+                            <Col>
                                 {child}
                             </Col>
                         ))
