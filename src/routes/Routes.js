@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import Home from "static/Home";
 import Redux from "static/Redux";
-import Counter from "apps/Counter";
-import TicTacToe from "apps/tictactoe/TicTacToe";
+import Counter from "Apps/Counter";
+import TicTacToe from "Apps/tictactoe/TicTacToe";
 
 const Routes = () => (
     <main>
