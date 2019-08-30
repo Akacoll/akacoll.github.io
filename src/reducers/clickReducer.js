@@ -1,15 +1,9 @@
-import { CLICK_UPDATE_VALUE } from 'actions/actionTypes';
+import { ADD_PRODUCT } from 'actions/actionTypes';
 
-const initialState = {
-    newValue: 'Change the input and click the button!'
-};
-export const clickReducer = (state = initialState, action) => {
+export const productReducer = (state = [], action) => {
     switch (action.type) {
-        case CLICK_UPDATE_VALUE:
-            return {
-                ...state,
-                newValue: action.newValue
-            };
+        case ADD_PRODUCT:
+            return state.concat([action.product])
         default:
             return state;
     }

@@ -9,32 +9,33 @@ import Header from "static/Header";
 import Button from 'shared/Button';
 
 const App = () => {
+  let linkVariant = "secondary";
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Header>
           <Link to={"/home"}>
             <Button
-              variant="outline-dark"
-              text="Home"
+              variant={linkVariant}
+              text="Home 🏠"
             />
           </Link>
           <Link to={"/redux"}>
             <Button
-              variant="outline-dark"
-              text="Redux"
+              variant={linkVariant}
+              text="Redux 🛍"
             />
           </Link>
           <Link to={"/counter"}>
             <Button
-              variant="outline-dark"
-              text="Counter"
+              variant={linkVariant}
+              text="Counter 🤓"
             />
           </Link>
           <Link to={"/tictactoe"}>
             <Button
-              variant="outline-dark"
-              text="Tic Tac Toe"
+              variant={linkVariant}
+              text="😇 Tic Tac Toe 😈"
             />
           </Link>
         </Header>
